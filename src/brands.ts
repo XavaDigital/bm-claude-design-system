@@ -90,7 +90,9 @@ const beastmode: Brand = {
 };
 
 /**
- * BM-estore storefront red. Also the BeastMode logo red.
+ * THE BeastMode brand red — the storefront, the logo, and (since 2026-08-21)
+ * GotYaBack too. Verified against the logo artwork (assets/) and the live
+ * beastmode.co.nz theme CSS, not just the fleet audit.
  *
  * Measured: white on #bf272d = 5.93:1 (passes comfortably). Black would be
  * 3.54:1, so white is unambiguous.
@@ -132,43 +134,19 @@ const estore: Brand = {
 };
 
 /**
- * GotYaBack crowdfunding red.
+ * GotYaBack.
  *
- * Measured: white on #C8102E = 5.88:1 (passes). Hue sits 9.1 degrees from the
- * error red #ff4d4f — effectively the same colour to a user, which is what
- * makes the danger protocol in ./theme/danger.ts mandatory rather than
- * advisory on this brand.
+ * David ruled 2026-08-21 that GotYaBack does NOT carry its own red — it uses
+ * the one BeastMode brand red, the same ramp as the estore. (The earlier
+ * #C8102E was retired with the document design system work; see
+ * bm-design-documents.) The brand key stays separate so apps keep a stable
+ * reference and the danger protocol still applies via `redBrands`.
  */
 const gotyaback: Brand = {
   key: "gotyaback",
   label: "GotYaBack",
   usedBy: ["bm-gotyaback (public campaign, sponsor and thank-you pages)"],
-  ramp: {
-    light: {
-      base: "#c8102e",
-      solid: "#c8102e",
-      solidHover: "#a80c26",
-      solidActive: "#8a0a1f",
-      link: "#c8102e",
-      linkHover: "#a80c26",
-      soft: "#fdf0f3",
-      softHover: "#fbd9e0",
-      softBorder: "#f2adba",
-      onSolid: "#ffffff",
-    },
-    dark: {
-      base: "#e02244",
-      solid: "#e02244",
-      solidHover: "#c8102e",
-      solidActive: "#a80c26",
-      link: "#ff8fa3",
-      linkHover: "#ffb5c2",
-      soft: "rgba(224,34,68,.16)",
-      softHover: "rgba(224,34,68,.24)",
-      softBorder: "rgba(224,34,68,.38)",
-      onSolid: "#ffffff",
-    },
-  },
+  ramp: estore.ramp,
 };
 
 export const brands: Record<BrandKey, Brand> = { beastmode, estore, gotyaback };

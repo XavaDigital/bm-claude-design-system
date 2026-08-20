@@ -125,7 +125,7 @@ describe("brand invariants", () => {
   it("the dark chrome surface is darker than the page", () => {
     // The ruling that bm-sales gets wrong today. If these ever swap, every
     // screen's depth model inverts.
-    expect(surfaces.dark.chrome).toBe("#141414");
+    expect(surfaces.dark.chrome).toBe("#151515");
     expect(surfaces.dark.page).toBe("#191919");
   });
 });

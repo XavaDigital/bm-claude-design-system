@@ -32,7 +32,8 @@ export const surfaces: Record<ColorMode, SurfaceRamp> = {
     subtle: "#f1f5f9",
   },
   dark: {
-    chrome: "#141414",
+    /** #151515 matches the beastmode.co.nz ground. Ruled 2026-08-21 (was #141414). */
+    chrome: "#151515",
     page: "#191919",
     panel: "#212121",
     elevated: "#2a2a2a",

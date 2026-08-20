@@ -57,7 +57,7 @@ const sections = [
   {
     id: "staff-dark",
     title: "Staff tools — dark",
-    note: "The same screen on the four-step ramp: chrome #141414 behind the sidebar, page #191919, panels #212121, popups #2a2a2a.",
+    note: "The same screen on the four-step ramp: chrome #151515 behind the sidebar, page #191919, panels #212121, popups #2a2a2a.",
     bg: surfaces.dark.page,
     html: render(React.createElement(StaffDark)),
   },
@@ -71,7 +71,7 @@ const sections = [
   {
     id: "customer-gotyaback",
     title: "Customer-facing — GotYaBack",
-    note: "The same layout on the other brand red #C8102E. Everything except the accent is shared with the screen above.",
+    note: "The same layout for GotYaBack — same brand red #bf272d since the 2026-08-21 ruling. Everything except the brand key is shared with the screen above.",
     bg: surfaces.light.page,
     html: render(React.createElement(CustomerGotyaback)),
   },

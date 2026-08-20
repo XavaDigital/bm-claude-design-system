@@ -85,7 +85,7 @@ corner radii, spacing, status colours, elevation, and the chart palette.
 Getting this backwards inverts the depth model of every screen.
 
 ```
-dark    chrome #141414  →  page #191919  →  panel #212121  →  elevated #2a2a2a
+dark    chrome #151515  →  page #191919  →  panel #212121  →  elevated #2a2a2a
 light   chrome #ffffff  →  page #f8fafc  →  panel #ffffff  →  subtle   #f1f5f9
 ```
 
@@ -137,6 +137,41 @@ rg '^\s*(nav|footer|header|section|main|aside|ul|ol|li|p|a|button|input|table)\s
 Scope them to a class, or wrap them in `:not(.bm-surface *)`. The apps most at
 risk are the ones still shipping an unmodified starter stylesheet — the audit
 found two.
+
+---
+
+## Brand assets and the wordmark
+
+The canonical logo artwork ships in `assets/` — the first fleet-wide copy, so
+apps stop sourcing their own or typing the name instead:
+
+- `assets/beastmode-logo_white.svg` — for dark grounds
+- `assets/beastmode-logo_black.svg` — for light grounds
+
+Rules (ruled 2026-08-21, alongside the document design system in
+`bm-design-documents`):
+
+- **Always prefer the logo file** — PDF invoices, email headers, the login
+  page, the storefront. The logo is BEAST + beast-head + MODE with `#bf272d`
+  accents, aspect ratio ≈ 3.2:1. Embed as a data URI where a file reference
+  cannot survive (email, standalone HTML, html2canvas PDFs).
+- Never recolour it, never split-colour a typed wordmark, never write
+  "Beast Mode" as two words.
+- **Text-only fallback** (plain-text email, contexts with no images):
+  `BEASTMODE.` in Archivo 800 uppercase, single colour, with the period in
+  the brand red.
+- The brand red `#bf272d` is artwork-verified — it is in the logo SVGs and
+  the live site theme CSS, not just the fleet audit. Do not reopen it.
+- GotYaBack carries the same red: David ruled 2026-08-21 that it does not
+  get its own. The `gotyaback` brand key remains (stable references, danger
+  protocol), but its ramp is the shared brand-red ramp.
+
+Deferred, for when the customer-facing apps migrate: the document design
+system's display voice (Archivo 800 uppercase, tight tracking, red rule
+bars, outlined display text at ~3% stroke on light / ~2% on dark) is
+available to storefront heroes and campaign headers. See
+`bm-design-documents/beastmode-document-style.md`. Staff surfaces stay as
+specified here.
 
 ---
 

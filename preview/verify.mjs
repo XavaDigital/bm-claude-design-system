@@ -41,7 +41,7 @@ for (const scheme of ["light", "dark"]) {
   // one render dark. These four assertions are what would have caught it.
   check("staff light sidebar is white", r.lightSider, "rgb(255, 255, 255)");
   check("staff light card is white", r.lightCard, "rgb(255, 255, 255)");
-  check("staff dark sidebar is #141414", r.darkSider, "rgb(20, 20, 20)");
+  check("staff dark sidebar is #151515", r.darkSider, "rgb(21, 21, 21)");
   check("staff dark card is #212121", r.darkCard, "rgb(33, 33, 33)");
   // Ant Design draws the card edge from the SECONDARY border token, so staff
   // cards land on the quietest value in the set and customer cards are lifted
